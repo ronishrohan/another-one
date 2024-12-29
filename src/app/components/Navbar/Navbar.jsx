@@ -170,10 +170,10 @@ const NavbarButton = ({ children, onClick }) => {
         }}
         animate={{
           // left: mouse.x,
-          top: mouse.y / 4,
+          // top: mouse.y / 4,
         }}
         transition={{ duration: 0.15, ease: "circOut" }}
-        className="bg-crust font-medium size-full  absolute  rounded-md text-pink flex items-center justify-center overflow-hidden"
+        className="bg-crust font-medium size-full  absolute bottom-0 rounded-md text-pink flex items-center justify-center overflow-hidden"
       >
         <motion.div
           animate={{ y: mouse.y / 5, x: mouse.x / 10 }}

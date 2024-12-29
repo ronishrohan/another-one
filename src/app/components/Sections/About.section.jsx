@@ -24,7 +24,7 @@ const About = () => {
         <img src="/images/bongo.png" className="w-2/3 aspect-square group-hover:scale-125 transition-all duration-500" alt="" />
 
       </div> */}
-      <div className="size-full  text-[1vw] rounded-lg bg-black/20 relative overflow-hidden border-2 border-pink/20 shadow-black hover:shadow-xl">
+      <div className="size-full  text-[1vw] rounded-lg bg-black/20 relative overflow-hidden border-2 border-pink/20 transition-shadow shadow-pink/5 shadow-2xl">
         <div className=" w-full h-[2.5vw] bg-mantle flex justify-end items-center gap-[1vw] px-[1vw]">
           <div className="absolute left-0 mx-[1vw] text-subtext0">kitty ~</div>
           <div className="size-[1vw] bg-yellow rounded-full"></div>
