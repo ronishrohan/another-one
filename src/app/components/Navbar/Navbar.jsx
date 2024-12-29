@@ -28,13 +28,13 @@ const Navbar = () => {
   });
   return (
     <motion.div
-      animate={{ paddingInline: detach ? "10px" : "0vw", marginTop: detach ? "10px" : "0px" }}
+      animate={{ paddingInline: detach ? "16px" : "0vw", marginTop: detach ? "10px" : "0px" }}
       className="h-20 fixed top-0 z-50 w-full"
     >
       <motion.div animate={{
-        borderRadius: detach ? "20px" : "0",
+        borderRadius: detach ? "8px" : "0",
         borderWidth: detach ? "1px" : "0",
-      }} className="h-full py-4 w-full border-yellow/20 flex items-center backdrop-blur-2xl  bg-black/30">
+      }} className="h-full py-4 w-full border-yellow/20 flex items-center  backdrop-blur-2xl  bg-black/30">
         <LogoText></LogoText>
         <div className="w-full h-full mr-8 flex items-center gap-2">
           <div className="flex h-full ml-auto max-w-[40vw] gap-4 mx-2">
@@ -138,10 +138,7 @@ const NavbarButton = ({ children, onClick }) => {
           button.current.offsetTop -
           button.current.offsetHeight / 2,
       });
-      console.log(
-        e.clientX - button.current.offsetLeft,
-        e.clientY - button.current.offsetTop
-      );
+      
     }
     window.addEventListener("mousemove", updateMouse);
 
