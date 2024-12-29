@@ -9,7 +9,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mono: ["IBM Plex Mono"]
+        mono: ["IBM Plex Mono", "monospace"],
+        dmsans: ["DM Sans Variable", "sans"],
+        playfair: ["Playfair Display Variable", "serif"],
       },
       colors: {
         background: "var(--background)",

@@ -11,21 +11,44 @@ const Navbar = () => {
   function handleToggleTheme() {
     setTheme((prev) => (prev === "mocha" ? "latte" : "mocha"));
   }
+  const [detach, setDetach] = useState(false);
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 100) {
+        setDetach(true);
+      } else {
+        setDetach(false);
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
   return (
-    <div className="h-20 py-4 w-full fixed flex items-center top-0 z-50">
-      <LogoText></LogoText>
-      <div className="ml-auto h-full mr-8 flex items-center gap-2">
-        <div className="flex h-full max-w-[40vw] gap-4 mx-2">
-          <NavbarLink>ABOUT</NavbarLink>
-          <NavbarLink>SKILLS</NavbarLink>
-          <NavbarLink>WORKS</NavbarLink>
-        </div>
-        <NavbarButton>LET'S TALK</NavbarButton>
-        {/* <NavbarButton onClick={handleToggleTheme}>
+    <motion.div
+      animate={{ paddingInline: detach ? "10px" : "0vw", marginTop: detach ? "10px" : "0px" }}
+      className="h-20 fixed top-0 z-50 w-full"
+    >
+      <motion.div animate={{
+        borderRadius: detach ? "20px" : "0",
+        borderWidth: detach ? "1px" : "0",
+      }} className="h-full py-4 w-full border-yellow/20 flex items-center backdrop-blur-2xl  bg-black/30">
+        <LogoText></LogoText>
+        <div className="w-full h-full mr-8 flex items-center gap-2">
+          <div className="flex h-full ml-auto max-w-[40vw] gap-4 mx-2">
+            <NavbarLink>ABOUT</NavbarLink>
+            <NavbarLink>SKILLS</NavbarLink>
+            <NavbarLink>WORKS</NavbarLink>
+          </div>
+          <NavbarButton>LET'S TALK</NavbarButton>
+          {/* <NavbarButton onClick={handleToggleTheme}>
           <Moon weight="fill"></Moon>
         </NavbarButton> */}
-      </div>
-    </div>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
@@ -34,18 +57,26 @@ const LogoText = () => {
     <motion.div
       whileHover="hover"
       initial="rest"
-      className="mx-8 leading-[2vw] overflow-hidden cursor-pointer select-none text-2xl tracking-tighter font-medium text-yellow flex items-center justify-center"
+      className="mx-8 w-fit shrink-0 leading-[2vw] overflow-hidden cursor-pointer font-dmsans select-none text-2xl tracking-tighter font-medium text-yellow flex items-center justify-center"
     >
-      <motion.div variants={{
-        hover: {
-          scaleY: 0,
-          y: "-80%",
-        },
-        rest: {
-          scaleY: 1,
-          y: "0%",
-        },
-      }}>RONISH</motion.div>
+      <motion.div
+        variants={{
+          hover: {
+            scaleY: 0,
+            y: "-80%",
+          },
+          rest: {
+            scaleY: 1,
+            y: "0%",
+          },
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "circOut",
+        }}
+      >
+        RONISH
+      </motion.div>
       <motion.div
         variants={{
           hover: {
@@ -56,6 +87,10 @@ const LogoText = () => {
             scaleY: 0,
             y: "100%",
           },
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "circOut",
         }}
         className="absolute text-pink border-b-2 border-pink pointer-events-none"
       >
@@ -75,8 +110,6 @@ const NavbarLink = ({ children }) => {
         hover: {
           fontWeight: 900,
         },
-        
-        
       }}
       className="text-text h-full active:bg-pink active:text-crust  select-none overflow-hidden hover:text-pink border border-transparent px-4 rounded-md hover:border-pink  cursor-pointer flex items-center"
     >

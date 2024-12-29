@@ -4,19 +4,22 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <div className="h-dvh w-full p-4 px-8 py-[56px] relative flex">
-      <div className="absolute z-0 size-full top-0 left-0 mix-blend-multiply">
-        {/* <img src="/yes.jpg" alt="" className='size-full absolute top-0 left-0 object-cover opacity-100' /> */}
+    <div className="h-dvh overflow-hidden w-full p-4 px-8 py-[56px] relative flex">
+      
+      <div className="z-20 pointer-events-none">
+        <div className="absolute z-0 size-full top-0 left-0 mix-blend-multiply">
+          {/* <img src="/yes.jpg" alt="" className='size-full absolute top-0 left-0 object-cover opacity-100' /> */}
+        </div>
+        <motion.div
+          whileHover="hover"
+          initial="rest"
+          animate="to"
+          className="absolute text-text   z-10 bottom-0 left-0 mx-8 my-4 flex flex-col text-[10vw]  leading-[10vw] tracking-tighter"
+        >
+          <SlideLoop>THIS IS RONISH</SlideLoop>
+          <SlideLoop>I MAKE WEBSITES</SlideLoop>
+        </motion.div>
       </div>
-      <motion.div
-        whileHover="hover"
-        initial="rest"
-        animate="to"
-        className="absolute text-text   z-10 bottom-0 left-0 mx-8 my-4 flex flex-col text-[10vw]  leading-[10vw] tracking-tighter"
-      >
-        <SlideLoop>THIS IS RONISH</SlideLoop>
-        <SlideLoop>I MAKE WEBSITES</SlideLoop>
-      </motion.div>
     </div>
   );
 };

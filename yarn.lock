@@ -84,6 +84,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource-variable/dm-sans/-/dm-sans-5.1.0.tgz#c371e4d2a9f43fa0df5779f5567099f2434610bf"
   integrity sha512-wPhOMY/3ipy0t5ZIQk7FTKd3uZqE1XP2Yd2oKe3HfMWCYkotbcoMLkBQXcZzf/SgdCdczSP/hiO/PAZb84Kbxw==
 
+"@fontsource-variable/playfair-display@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/playfair-display/-/playfair-display-5.1.1.tgz#7dbf75be26f052774365cbec418e1fd7c717fb91"
+  integrity sha512-89gLVOcVRIp0aayWwTcaLGQxhxDT2ZIv7cFU/BjxcWA8iALi8SrlT7dNHdhakb8MeXc0UUw9n8k6kG+jWvX61A==
+
 "@fontsource/ibm-plex-mono@^5.1.0":
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-mono/-/ibm-plex-mono-5.1.0.tgz#383bd8e7fa4d71f4bae15b86f9d4484d74772d25"
